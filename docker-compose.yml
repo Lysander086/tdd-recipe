@@ -1,0 +1,18 @@
+version: "3"
+
+services: 
+    app: 
+        build: 
+            context: .
+        ports: 
+            - "8000:8000"
+        # map code repo app dir to the app dir in docker image
+        volumes:
+            - ./app:/app
+        # greater symbol only for wrap the command in a new line ( for easy reading )
+        # 8000 for mapping port
+        command: >
+            sh -c "python manage.py runserver 0.0.0.0:8000"
+        
+        
+        
