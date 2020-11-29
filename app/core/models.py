@@ -10,7 +10,6 @@ class UserManager(BaseUserManager):
         user = self.model(email=email, **extra__fields)
         user.set_password(password)
         user.save(using=self._db)
-
         return user
 
 
