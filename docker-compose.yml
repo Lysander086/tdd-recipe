@@ -11,7 +11,7 @@ services:
         # greater symbol only for wrap the command in a new line ( for easy reading )
         # 8000 for mapping port
         command: >
-            sh -c "python manage.py runserver 0.0.0.0:8000"
+            sh -c "python manage.py wait_for_db && python manage.py runserver 0.0.0.0:8000"
 
         environment:
             - DB_HOST=db
